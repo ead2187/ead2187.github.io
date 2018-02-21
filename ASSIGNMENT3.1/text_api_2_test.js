@@ -1,14 +1,16 @@
 var headlines = [];
-var letter = [
+var hitwords = [
+  'o',
   'O',
-  'o'
+
+
 ];
 
 function preload() {
 
   // Assemble url for API call
   var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
-  var apikey = "70c087000f21458e97dd86f0ad303924"; // see: https://developer.nytimes.com
+  var apikey = "6db9472ef04a4261828af02e9cb81f02"; // see: https://developer.nytimes.com
   url += "?api-key=" + apikey;
 
   nytResponse = loadJSON(url);
@@ -17,10 +19,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(800, 800);
   background(0);
 
-  textSize(10);
+  textSize(15);
   textAlign(LEFT);
 
   noLoop(); // since we're not animating, one frame is sufficient: run draw() just once
@@ -31,49 +33,31 @@ function setup() {
 function draw() {
   background('blue');
 
-  var lineheight = 20;
-  var margin = 40;
+  var lineheight = 24;
+  var margin = 20;
   translate(margin, margin);
 
-
-      //define size of alphabets
-      // var str1 = 'abcdefghijklmnopqrstuvwxyz';
-      // var str2 = split(str1, '');
-      // var size = (str2.indexOf(letter[j])+1);
-
-
   for (var i = 0; i < headlines.length; i++) {
-    var words = split(headlines[i], ' ');
-    console.log(words);
+    var words = split(headlines[i], '');
+    // console.log(words);
 
     var nextX = 0;
-    var a = words[i];
-    var b = a[i];
+
+ 
 
 
     for (var j = 0; j < words.length; j++) {
-     if (b[i]=='o','O') { 
-      fill('white');
-     } else {
+      if (hitwords.includes(words[j].toLowerCase())) {
+        fill('white');
+      } else {
+        fill('blue');
+      }
 
-    text(words[j]+' ', nextX, i*lineheight);
-    nextX+ = textWidth(words[j]+' ');
+
+
+      text(words[j]+' ', nextX, i*lineheight);
+      nextX += textWidth(words[j]+' ');
     }
-
-      
-      // if word contains an o
-      //   for each letter
-      //      if letter == 'o'
-      //         set fill white
-      //.     else 
-      //         set fill black
-      //.     draw one letter
-      //.     update nextX with wordWdith 
-      // else
-      //   set color black
-      //   draw word
-      //   update nextX with wordWidth
-
   }
 }
 
@@ -82,7 +66,7 @@ function extractHeadlines() {
   // console.log(nytResponse); // take a look at the full API response structure
 
   for (var i = 0; i < nytResponse.results.length; i++) {
-    var h = nytResponse.results[i].abstract;
+    var h = nytResponse.results[i].title;
     // besides .title, other text data available to you include:
     // .abstract, .byline, .section, etc. etc.
     append(headlines, h);
