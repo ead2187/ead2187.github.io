@@ -64,5 +64,16 @@ function loadData() {
                         }
 
   ellipse(time[j], height/2, cost[i]);
+
+  var d = int(dist(mouseX, mouseY, positionX, positionY));
+                        if (d < 8){
+                                text('COST:', 50, 500);
+                                text(cost, 175, 500);
+                                text('COUNTY:', 50, 515);
+                                text(county, 175, 515);
+                                text('TIME:', 50, 530);
+                                text(time, 175, 530);
+                                noStroke();
+                        }
 }
   }
