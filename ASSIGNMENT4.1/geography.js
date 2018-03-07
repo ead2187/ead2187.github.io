@@ -35,6 +35,34 @@ function loadData() {
 
         var j = 0; j < time.length; j++;
 
+        if (county == 'BK'){
+                                fill (130, 130, 130, 30);
+                        }
+                        else if (county == 'BX') {
+                                fill (70, 178, 157, 30);
+                        }
+                        else if (county == 'K') {
+                                fill (146, 214, 195, 30);
+                        }
+                        else if (county == 'MN') {
+                                fill (19, 96, 74, 30);
+                        }
+                        else if (county == 'NY') {
+                                fill (219, 49, 70, 30);
+                        } 
+                        else if (county == 'Q') {
+                                fill (92,96, 161, 30);
+                        }
+                        else if (county == 'QN') {
+                                fill (4, 227, 229, 30);
+                        }
+                        else if (county == 'R') {
+                                fill (7, 166, 212, 30);
+                        }
+                        else if (county == 'ST') {
+                                fill (100, 6, 200, 30);
+                        }
+
   ellipse(time[j], height/2, cost[i]);
 }
   }
