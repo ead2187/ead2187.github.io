@@ -1,34 +1,40 @@
-var parkingCost;
-var startX = 50;
-var endX = 950;
-var startY = 900;
-var endY = 50;
-var County = ["BX", "NY", "K", "Q", "MN", "QN"];
-var startCost = 0;
-var endCost = 645;
+var table;
+var cost;
+var time;
+var county;
+var margin = 50;
+
 
 function preload() {
-        parkingCost = loadTable('parkingticketdata.csv', 'csv', 'header');
+        table = loadTable('parkingticketdata.csv', 'csv', 'header');
+        noLoop(); //draw background once; recommended for static graphs//
         console.log('Table has been loaded...');
 }
 
-function setup(){
-        createCanvas(1000, 1000);
-        print(parkingCost.getColumnCount() + 'column count');
-        print(parkingCost.getRowCount() + 'row count');
-        noLoop(); //draw background once; recommended for static graphs//
+// In this sketch everything happens in setup
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  loadData();
+  noLoop();
 }
 
-function draw(){
-        background(255);
-        text('BOROUGH', 375, 950);
-        noStroke();
-        for (var i = 0; i < parkingCost.getRowCount(); i++){
-                var County = parkingCost.getString(i, 'County');
-                var Cost = parkingCost.getNum(i, 'Cost');
-                console.log('hi');
-                var positionX = map(County[i], 950, 45 + 20 * i, startX, endX);
-                var positionY = map(Cost, startCost, endCost, startY, endY);
-                ellipse(positionX, positionY, 8, 8);
-        }
+function loadData() {
+    cost = table.getColumn("Cost");
+    time = table.getColumn("Time");
+    county = table.getColumn("County");
+    console.log(cost);
+    console.log(time);
+    console.log(county);
+  }
+
+  function draw() {
+  background(0,0,255,50);
+  fill(0,255,0,20);
+
+  for (var i = 0; i < cost.length; i++) {
+
+        var j = 0; j < time.length; j++;
+
+  ellipse(time[j], height/2, cost[i]);
 }
+  }
