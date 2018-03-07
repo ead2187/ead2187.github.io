@@ -63,7 +63,7 @@ function loadData() {
                                 fill (100, 6, 200, 30);
                         }
 
-  ellipse(time[j], height/2, cost[i]);
+  ellipse(time[j], height/2, cost[i]/10);
 
   var d = int(dist(mouseX, mouseY, positionX, positionY));
                         if (d < 8){
