@@ -98,6 +98,8 @@ function setup(){
 }
 
 function loadData() {
+  var Cost;
+  var Time;
   Cost = table.getColumn("Cost");
   Time = table.getColumn("Time");
   console.log(Cost);
