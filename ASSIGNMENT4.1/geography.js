@@ -98,8 +98,8 @@ function setup(){
 }
 
 function loadData() {
-  leadingCauses = table.getColumn("Cost");
-  deathRates = table.getColumn("Time");
+  Cost = table.getColumn("Cost");
+  Time = table.getColumn("Time");
   console.log(Cost);
   console.log(timeout);
 }
