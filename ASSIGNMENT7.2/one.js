@@ -34,7 +34,7 @@ function draw(){
   time = table.getColumn("Time");
 
   for (var i=0;i<cost.length; i++) {
-    fill(0,255,168,30);
+    fill(0,255,168);
     var Xaxis = map (time[i],0,1499,50,width-50);
     var radius = map (cost[i],0,515,0,50);
 

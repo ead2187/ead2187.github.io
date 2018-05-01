@@ -41,3 +41,5 @@ function draw(){
     line(Xaxis, height*0.5, Xaxis, height*0.5);
   }
 }
+
+//want this one to map data points to time as a circle

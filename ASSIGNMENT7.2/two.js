@@ -2,7 +2,7 @@ var table;
 var cost;
 var time;
 var length;
-var margin = 50;
+var margin = 100;
 
 function preload(){
   table = loadTable("parkingticketdata.csv", "csv", "header");
@@ -11,7 +11,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(750, 750);
+  createCanvas(750, 3000);
   background (196,255,51);
   textSize(20);
   noLoop();
@@ -38,6 +38,6 @@ function draw(){
     var Xaxis = map (time[i],0,1499,50,width-50);
     var radius = map (cost[i],0,515,0,50);
 
-    line(Xaxis, height*0.5, Xaxis, height*0.5);
+    line(height*0.5, Xaxis, height*0.5, Xaxis);
   }
 }
