@@ -47,3 +47,4 @@ function draw(){
   line(0, 0, vx, vy);
   pop();
   }
+}
