@@ -1,9 +1,10 @@
+
 var table;
 var cost;
 var time;
 
 function preload(){
-  table = loadTable("parkingticketdata_MANHATTAN.csv", "csv", "header");
+  table = loadTable("queens_v3.csv", "csv", "header");
 }
 
 function setup(){
@@ -23,7 +24,7 @@ function loadData() {
 
 
 function draw(){
-    background(232,239,233);  //BACKGROUND
+    background(196,255,51);
     stroke(0,135,50,50);
     
     //drawing the ticks for time reference
@@ -63,7 +64,7 @@ function draw(){
     noFill();
     stroke(150);
     line(0, 0, 50, 0);
-    stroke(75,255,0,10); //LINE COLOR
+    stroke(0,0,255,10);
     line(0, 0, vx, vy);
     pop();
     }

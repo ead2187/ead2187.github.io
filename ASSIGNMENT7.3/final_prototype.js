@@ -66,7 +66,7 @@ function preload(){
 
 function setup(){
   createCanvas(1000, 5000);
-  background (196,255,51);
+  background (163,158,143);
   textSize(20);
   noLoop();
   loadData();
@@ -86,15 +86,16 @@ function loadData() {
 
 
 function draw(){
-  background(196,255,51);
+  background(232,239,233); //CHANGE BACKGROUND HERE
+    // background(196,255,51);
 
 console.log(cost.length);
   for (var i=0;i<cost.length; i++) {
     
-    fill(0,255,168);
+    fill(0,255,168);      
     var Xaxis = map (0,time[i],50,1499,width-50);
     var radius = map (cost[i],0,515,0,50);
-    stroke(0,0,255,2);
+    stroke(63,192,49,5); //CHANGE COLOR HERE
     push();
     translate(width/2,Xaxis);
     rotate(PI/3);
@@ -109,11 +110,11 @@ function showValues(){
 
   console.log(cost.length);
 
-  if (cost[i] >= 80) {
+  if (cost[i] > 80) {
 
     for (var i=0;i<cost.length; i++) {
         
-        // fill(0,255,168);
+        fill(0,255,168);
         var Xaxis = map (0,time[i],50,1499,width-50);
         var radius = map (cost[i],0,515,0,50);
         stroke('red');
@@ -127,7 +128,7 @@ function showValues(){
 
         for (var i=0;i<cost.length; i++) {
         
-        // fill(0,255,168);
+        fill(0,255,168);
         var Xaxis = map (0,time[i],50,1499,width-50);
         var radius = map (cost[i],0,515,0,50);
         // stroke(0,0,255,2);
