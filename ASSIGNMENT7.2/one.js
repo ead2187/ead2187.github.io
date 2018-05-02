@@ -28,7 +28,7 @@ function loadData() {
 
 function draw(){
   background(196,255,51);
-  stroke(0,135,50,50);
+  stroke(0,135,50);
 
   cost = table.getColumn("Cost");
   time = table.getColumn("Time");
