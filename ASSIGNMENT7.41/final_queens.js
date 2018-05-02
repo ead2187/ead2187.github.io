@@ -68,6 +68,57 @@ function draw(){
     line(0, 0, vx, vy);
     pop();
     }
-  
-  
 } 
+
+function showValues(){
+
+  background(232,239,233);
+
+  console.log(cost.length);
+
+  if (cost[i] > 1) {
+
+    for (var i=0;i<cost.length; i++) {
+        
+        fill(0,255,168);
+    angleMode(DEGREES);
+    var myDegrees = map(time[i], 0, 2400, 0, 360);
+    var radius = map (cost[i],0,200,0,150);
+    var v = p5.Vector.fromAngle(radians(myDegrees), radius);
+    var vx = v.x;
+    var vy = v.y;
+        stroke(0,89,255);
+    push();
+    translate(width / 2, height / 2);
+    noFill();
+    stroke(150);
+    line(0, 0, 0, 0);
+    stroke(0,89,255); //LINE COLOR
+    line(0, 0, vx, vy);
+    pop();
+      }
+      } else {
+
+        for (var i=0;i<cost.length; i++) {
+        
+        fill(0,255,168);
+    angleMode(DEGREES);
+    var myDegrees = map(time[i], 0, 2400, 0, 360);
+    var radius = map (cost[i],0,200,0,150);
+    var v = p5.Vector.fromAngle(radians(myDegrees), radius);
+    var vx = v.x;
+    var vy = v.y;
+        // stroke(0,0,255,2);
+        stroke('white');
+    push();
+    translate(width / 2, height / 2);
+    noFill();
+    stroke(150);
+    line(0, 0, 0, 0);
+    stroke(0,89,255); //LINE COLOR
+    line(0, 0, vx, vy);
+    pop();
+      }
+      }
+
+}
