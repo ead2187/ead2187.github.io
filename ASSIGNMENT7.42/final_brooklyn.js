@@ -130,7 +130,7 @@ var cost;
 var time;
 
 function preload(){
-  table = loadTable("parkingticketdata_BROOKLYN", "csv", "header");
+  table = loadTable("parkingticketdata_BROOKLYN.csv", "csv", "header");
 }
 
 function setup(){
