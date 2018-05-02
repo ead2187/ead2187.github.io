@@ -54,3 +54,5 @@ function draw(){
     angleMode(DEGREES);
     var myDegrees = map(time[i], 0, 2400, 0, 360);
     var radius = map (cost[i],0,200,0,150);
+  }
+}
