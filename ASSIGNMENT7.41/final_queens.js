@@ -68,7 +68,7 @@ function draw(){
     noFill();
     stroke(150);
     line(0, 0, 0, 0);
-    stroke(0,255,189,10); //LINE COLOR
+    stroke(0,122,58,10); //LINE COLOR
     line(0, 0, vx, vy);
     pop();
     }
