@@ -1,0 +1,51 @@
+var table;
+var cost;
+var time;
+var length;
+var county;
+var margin = 50;
+
+function preload(){
+  table = loadTable("queens_v3.csv", "csv", "header");
+}
+
+function setup(){
+  createCanvas(800, 800);
+  background (196,255,51);
+  textSize(20);
+  noLoop();
+  loadData();
+
+}
+
+function loadData() {
+  cost = table.getColumn("Cost");
+  time = table.getColumn("Time");
+  county = table.getColumn("County");
+}
+
+
+function draw(){
+  background(196,255,51);
+  stroke(0,135,50,50);
+    console.log(cost);
+  for (var i=0;i<cost.length; i++) {
+  
+  angleMode(DEGREES);
+  var myDegrees = map(time[i], 0, 2400, 0, 360);
+  var radius = map (cost[i],0,200,0,50);
+  var v = p5.Vector.fromAngle(radians(myDegrees), radius);
+  var vx = v.x;
+  var vy = v.y;
+
+  push();
+  translate(width / 2, height / 2);
+  noFill();
+  stroke(150);
+  line(0, 0, 50, 0);
+  stroke(0,0,255,10);
+  line(0, 0, vx, vy);
+  pop();
+  }
+  
+}​
