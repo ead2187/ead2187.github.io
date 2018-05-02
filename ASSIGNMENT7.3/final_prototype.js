@@ -86,7 +86,7 @@ function loadData() {
 
 
 function draw(){
-  background(232,239,233); //CHANGE BACKGROUND HERE
+  background(196,255,51); //CHANGE BACKGROUND HERE
     // background(196,255,51);
 
 console.log(cost.length);
@@ -95,7 +95,7 @@ console.log(cost.length);
     fill(0,255,168);      
     var Xaxis = map (0,time[i],50,1499,width-50);
     var radius = map (cost[i],0,515,0,50);
-    stroke(63,192,49,5); //CHANGE COLOR HERE
+    stroke(0,0,255,5); //CHANGE COLOR HERE
     push();
     translate(width/2,Xaxis);
     rotate(PI/3);
