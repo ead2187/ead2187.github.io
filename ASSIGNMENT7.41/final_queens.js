@@ -13,6 +13,10 @@ function setup(){
   textSize(20);
   noLoop();
   loadData();
+  button = createButton('PUSH');
+  button.position(100,100);
+  button.mousePressed(showValues);
+
 
 }
 
@@ -63,12 +67,13 @@ function draw(){
     translate(width / 2, height / 2);
     noFill();
     stroke(150);
-    line(0, 0, 50, 0);
-    stroke(0, 122, 58,10); //LINE COLOR
+    line(0, 0, 0, 0);
+    stroke(0,255,189,10); //LINE COLOR
     line(0, 0, vx, vy);
     pop();
     }
 } 
+
 
 function showValues(){
 
