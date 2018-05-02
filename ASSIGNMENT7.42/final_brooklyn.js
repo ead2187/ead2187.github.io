@@ -62,7 +62,7 @@ function draw(){
     translate(width / 2, height / 2);
     noFill();
     stroke(150);
-    line(0, 0, 50, 0);
+    line(0, 0, 0, 0);
     stroke(63,192,49,10); //LINE COLOR
     line(0, 0, vx, vy);
     pop();
